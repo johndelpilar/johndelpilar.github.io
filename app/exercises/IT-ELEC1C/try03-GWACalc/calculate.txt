@@ -1,0 +1,155 @@
+&lt;?php session_start() ?&gt;
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot; type=&quot;text/css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/font-awesome.css&quot; type=&quot;text/css&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=Cp1252&quot;&gt;
+&lt;title&gt;GWA Calculator&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+	body {
+		color: whitesmoke;
+		background-color: #202020;
+		font-family: &quot;Segoe UI&quot;;
+		width: 90%;
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	hr {
+		border-width: 2px;
+		border-style: solid;
+		border-color: lightgray;
+	}
+	p {
+		font-size: x-small;
+	}
+	th {
+		padding: 0 10px;
+	}
+&lt;/style&gt; 
+&lt;/head&gt;
+    &lt;body&gt;
+    &lt;h2&gt;&lt;i class=&quot;fa fa-calculator&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; GWA Calculator&lt;/h2&gt;
+    &lt;hr&gt;
+    &lt;?php    
+    	class Course {
+    		
+			private $code;
+			
+			private $unit;
+			
+			private $grade;
+			
+			static $courseArray = array();
+			
+			static $codeArray = array();
+			
+			static $unitArray = array();
+			
+			static $gradeArray = array();
+			
+			function __construct($code, $unit, $grade) {
+				$this-&gt;code = $code;
+				$this-&gt;unit = $unit;
+				$this-&gt;grade = $grade;
+			}
+			
+			public function getCode() {
+				return $this-&gt;code;
+			}
+			
+			public function getUnit() {
+				return $this-&gt;unit;
+			}
+			
+			public function getGrade() {
+				return $this-&gt;grade;
+			}
+		
+    	}
+    	
+    	foreach ($_GET[&apos;code&apos;] as $code) {
+    		Course::$codeArray[] = $code;
+    	}
+    	foreach ($_GET[&apos;unit&apos;] as $unit) {
+    		Course::$unitArray[] = $unit;
+    	}
+    	foreach ($_GET[&apos;grade&apos;] as $grade) {
+    		Course::$gradeArray[] = $grade;
+    	}
+    	
+    	for ($i = 0; $i &lt; count(Course::$codeArray); $i++) {
+    		Course::$courseArray[] = new Course(Course::$codeArray[$i], Course::$unitArray[$i], Course::$gradeArray[$i]);
+    	}
+
+    	$_SESSION[&apos;codeArrayContent&apos;] = Course::$codeArray;
+    	$_SESSION[&apos;unitArrayContent&apos;] = Course::$unitArray;
+    	$_SESSION[&apos;gradeArrayContent&apos;] = Course::$gradeArray;
+    	
+	?&gt;
+	&lt;div id=&quot;calculate-main-block&quot;&gt;
+		&lt;table align=&quot;center&quot; class=&quot;table table-hover&quot;&gt;
+			&lt;thead&gt;
+				&lt;tr&gt;
+					&lt;th&gt;Code&lt;/th&gt;
+					&lt;th&gt;Unit&lt;/th&gt;
+					&lt;th&gt;Grade&lt;/th&gt;
+				&lt;/tr&gt;
+			&lt;/thead&gt;
+			&lt;tbody&gt;
+				&lt;?php 
+				    $fs = fopen(&quot;gwa-calc-result.csv&quot;, &quot;w&quot;);
+				    fwrite($fs, &quot;CODE,UNIT,GRADE\n&quot;);
+				    
+					$totalUnits = 0;
+					$gwa = 0.0;
+					foreach (Course::$courseArray as $course) {
+						echo &quot;&lt;tr&gt;&quot;;
+						echo &quot;&lt;td&gt;&quot; . $course-&gt;getCode() . &quot;&lt;/td&gt;&quot;;
+						echo &quot;&lt;td align=&apos;center&apos;&gt;&quot; . $course-&gt;getUnit() . &quot;&lt;/td&gt;&quot;;
+						echo &quot;&lt;td align=&apos;center&apos;&gt;&quot; . $course-&gt;getGrade() . &quot;&lt;/td&gt;&quot;;
+						echo &quot;&lt;/tr&gt;&quot;;
+						
+						fwrite($fs, $course-&gt;getCode() . &quot;,&quot; . $course-&gt;getUnit() . &quot;,&quot; . $course-&gt;getGrade() . &quot;\n&quot;);
+						
+						$totalUnits += $course-&gt;getUnit();
+						$gwa += $course-&gt;getUnit() * $course-&gt;getGrade();
+					}
+				?&gt;
+			&lt;/tbody&gt;
+			&lt;thead&gt;
+				&lt;tr&gt;
+					&lt;th&gt;Total&lt;/th&gt;
+					&lt;th&gt;&lt;?php echo $totalUnits; ?&gt;&lt;/th&gt;
+					&lt;th&gt;&lt;?php echo $gwa / $totalUnits; ?&gt;&lt;/th&gt;
+					&lt;?php 
+						fwrite($fs, &quot;TOTAL,&quot; . $totalUnits . &quot;,&quot; . ($gwa / $totalUnits) . &quot;\n&quot;);
+						fclose($fs);
+					?&gt;
+				&lt;/tr&gt;
+			&lt;/thead&gt;
+		&lt;/table&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;div class=&quot;col-xs-12 col-sm-12 col-md-6 col-lg-6&quot;&gt;
+			&lt;a href=&quot;index.php&quot;&gt;&lt;input class=&quot;btn btn-primary btn-block&quot; type=&quot;button&quot; value=&quot;Back to Course Count&quot;&gt;&lt;/a&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;col-xs-12 col-sm-12 col-md-6 col-lg-6&quot;&gt;
+			&lt;a href=&quot;gwa-calc-result.csv&quot; download&gt;&lt;input class=&quot;btn btn-success btn-block&quot; type=&quot;button&quot; value=&quot;Download Results&quot;&gt;&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	
+
+    &lt;hr&gt;
+    &lt;p&gt;&lt;i&gt;DEL PILAR, John Anthony P.&lt;/i&gt;
+    &lt;br&gt;&lt;i&gt;johnanthony.delpilar@gmail.com&lt;/i&gt;
+    &lt;br&gt;&lt;i&gt;2014069455@ust-ics.mygbiz.com&lt;/i&gt;
+    &lt;br&gt;&lt;i&gt;+63 917 670 1024&lt;/i&gt;&lt;/p&gt;
+    &lt;/body&gt;
+    
+    &lt;?php 
+    	session_unset();
+    	session_destroy();
+    ?&gt;
+    
+&lt;/html&gt;

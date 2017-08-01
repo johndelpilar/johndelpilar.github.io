@@ -1,0 +1,167 @@
+@CHARSET "ISO-8859-1";
+
+#header, #information, #courses, #finance, #payment, #agreement {
+	width: 60%;
+	margin: 0 auto;
+}
+
+a:LINK, a:VISITED {
+	background-color: white;
+	color: black;
+	text-decoration: none;
+}
+
+a:HOVER, a:ACTIVE, a:LINK, a:VISITED {
+	background-color: white;
+	color: #00a1e4;
+	text-decoration: underline;
+}
+
+div#header > div > p.label {
+	color: black;
+}
+
+div#header > div > p.field {
+	font-family: Arial;
+	color: #505050;
+}
+
+div#header > div.center-text > table > tbody > tr > td {
+	text-align: center;
+}
+
+div#information > table > tbody > tr > td {
+	padding-right: 50px;
+}
+
+div#information > table > tbody > tr > td.label {
+	font-family: "Times New Roman";
+	color: black;
+}
+
+div#information > table > tbody > tr > td.field {
+	font-family: monospace;
+	color: #505050;
+}
+
+div#information > table > tbody > tr > td.field-special {
+	font-family: monospace;
+	color: #505050;
+	padding-right: 20px;
+}
+
+div#information > p {
+	font-family: monospace;
+	color: #505050;
+	text-align: right;
+	font-size: 24px;
+}
+
+div#courses > table > thead > tr > th {
+	font-family: "Times New Roman";
+	text-align: center;
+	padding-left: 30px;
+	padding-right: 30px;
+	background-color: #d3d3d3;
+}
+
+div#courses > table > tbody > tr > td {
+	font-family: monospace;
+	padding-left: 10px;
+	padding-top: 5px;
+	vertical-align: top;
+	text-align: left;
+	color: #505050;
+}
+
+div#courses > table > tbody > tr > td.class-schedule {
+	font-family: monospace;
+	padding-left: 30px;
+}
+
+div#courses > table > tbody > tr > td.unit-align {
+	font-family: monospace;
+	text-align: right;
+}
+
+div#finance > table > thead > tr > th {
+	font-family: "Times New Roman";
+	text-align: center;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-color: #d3d3d3;
+	text-decoration: underline;
+}
+
+div#finance > table > tbody > tr > td {
+	font-family: monospace;
+	padding-right: 50px;
+	padding-left: 10px;
+	color: #505050;
+}
+
+div#finance > table > tbody > tr > td.amount {
+	text-align: right;
+	padding-right: 10px;
+}
+
+div#payment > table > tbody > tr > td {
+	padding-right: 50px;
+	padding-top: 5px;
+}
+
+div#payment > table > tbody > tr > td.label {
+	font-family: "Times New Roman";
+	color: black;
+}
+
+div#payment > table > tbody > tr > td.field {
+	font-family: monospace;
+	color: #505050;
+	text-align: right;
+}
+
+div#agreement > table, div#agreement > table > tbody > tr > td {
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+div#agreement > table > tbody > tr > td {
+	padding: 10px;
+	font-family: "Times New Roman";
+	color: black;
+}
+
+div#agreement > table > tbody > tr > td > div.img-with-text > p.signature {
+	text-decoration: overline;
+	text-align: right;
+}
+
+div#agreement > h5 {
+	font-family: "Times New Roman";
+	text-align: right;
+}
+
+.img-with-text {
+	text-align: right;
+	width: 250px;
+	margin-left: auto;
+}
+
+.img-with-text img {
+	display: block;
+	margin: 0 auto;
+}
+
+.rotate {
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	font-family: monospace;
+	color: black;
+	position: absolute; 
+	left: 1040px; 
+	top: 800px;
+}

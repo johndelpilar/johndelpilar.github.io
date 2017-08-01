@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h4>Page Index</h4>
+	<p>
+		<u>This is an administrative page.</u><br>
+		<i>Download the source code through the links below.</i>
+	</p>
+	<ul>
+		<li><u><a href='index.php' download>index.php</a></u> <a onclick="$('#code-block').load('index.txt');">[as text]</a></li>
+		<li><u><a href='form.php' download>form.php</a></u> <a onclick="$('#code-block').load('form.txt');">[as text]</a></li>
+		<li><u><a href='calculate.php' download>calculate.php</a></u> <a onclick="$('#code-block').load('calculate.txt');">[as text]</a></li>
+	</ul>
+	
+	<hr>
+	<pre id="code-block">if [as text] is clicked, code will be shown here</pre>
+	<input class="btn btn-info btn-block" type="button" value="Reset Content" onclick="$('#code-block').load('reset.txt');">
+	
+	<hr>
+	<h5>Click <a href="index.php">here</a> to go back to the user-level page.</h5>
+</body>
+</html>

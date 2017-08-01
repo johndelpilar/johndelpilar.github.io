@@ -1,0 +1,66 @@
+&lt;?php session_start() ?&gt;
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot; type=&quot;text/css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/font-awesome.css&quot; type=&quot;text/css&quot;&gt;
+&lt;script src=&quot;js/jquery-latest.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/hidden-prompt.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=Cp1252&quot;&gt;
+&lt;title&gt;GWA Calculator&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+	body {
+		color: whitesmoke;
+		background-color: #202020;
+		font-family: &quot;Segoe UI&quot;;
+		width: 90%;
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	hr {
+		border-width: 2px;
+		border-style: solid;
+		border-color: lightgray;
+	}
+	p {
+		font-size: x-small;
+	}
+	a#hidden {
+		text-decoration: none;
+		color: whitesmoke;
+		background-color: #202020;
+	}
+&lt;/style&gt;
+&lt;/head&gt;
+    &lt;body&gt;
+    &lt;h2&gt;&lt;i class=&quot;fa fa-calculator&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; GWA Calculator&lt;/h2&gt;
+    &lt;hr&gt;
+    &lt;div id=&quot;index-main-block&quot;&gt;
+    	&lt;form action=&quot;form.php&quot;&gt;
+    		&lt;div class=&quot;row&quot; align=&quot;center&quot;&gt;
+    			&lt;div class=&quot;col-xs-12 col-sm-6 col-md-6 col-lg-6&quot;&gt;
+    				&lt;label for=&quot;courseCount&quot;&gt;Course Count: &lt;/label&gt;
+    			&lt;/div&gt;
+    			&lt;div class=&quot;col-xs-12 col-sm-6 col-md-6 col-lg-6&quot;&gt;
+    				&lt;input class=&quot;form-control&quot; id=&quot;courseCount&quot; type=&quot;number&quot; name=&quot;courseCount&quot; required min=&quot;1&quot; max=&quot;99&quot;&gt;
+    			&lt;/div&gt;
+    		&lt;/div&gt;
+    		&lt;br&gt;
+    		&lt;div class=&quot;row&quot; align=&quot;center&quot;&gt;
+    			&lt;div class=&quot;col-xs-12 col-sm-12 col-md-6 col-lg-6&quot;&gt;
+    				&lt;input class=&quot;btn btn-primary btn-block&quot; type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+    			&lt;/div&gt;
+    			&lt;div class=&quot;col-xs-12 col-sm-12 col-md-6 col-lg-6&quot;&gt;
+    				&lt;input class=&quot;btn btn-danger btn-block&quot; type=&quot;reset&quot;&gt;
+    			&lt;/div&gt;
+    		&lt;/div&gt;
+    	&lt;/form&gt;
+    &lt;/div&gt;
+    &lt;hr&gt;
+    &lt;iframe id=&quot;invisible&quot; style=&quot;display:none;&quot;&gt;&lt;/iframe&gt;
+    &lt;p&gt;&lt;i&gt;DEL PILAR, John Anthony P.&lt;/i&gt;
+    &lt;br&gt;&lt;i&gt;johnanthony.delpilar@gmail.com&lt;/i&gt;
+    &lt;br&gt;&lt;i&gt;2014069455@ust-ics.mygbiz.com&lt;/i&gt;
+    &lt;br&gt;&lt;i&gt;&lt;a id=&quot;hidden&quot;&gt;+&lt;/a&gt;63 917 670 1024&lt;/i&gt;&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;

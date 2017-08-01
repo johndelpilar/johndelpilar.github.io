@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>John Del Pilar</title>
+        <link rel="icon" href="http://ustjpcs.org/johndelpilar/icon.png">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../css/w3.css">
+        <link rel="stylesheet" href="../../css/w3-theme-black.css">
+        <link rel="stylesheet" href="../../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../css/bootstrap.min.css">
+        <script src="../../js/script.js"></script>
+        <script src="../../js/jquery-latest.min.js"></script>
+        <style type="text/css">
+            body {
+                color: #202020;
+                background-color: whitesmoke;
+                font-family: "Segoe UI";
+            }
+            hr {
+                border-width: 2px;
+                border-style: solid;
+                border-color: lightgray;
+            }
+            p {
+                font-size: x-small;
+            }
+            th, td {
+                padding: 5px 15px;
+            }
+            label {
+                color: dimgray;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="w3-bar w3-theme">
+            <a href="../../index.php" class="w3-bar-item w3-button w3-padding-16">Home</a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button w3-padding-16">
+                    Social <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a href="https://www.facebook.com/johnanthony.delpilar" target="_blank" class="w3-bar-item w3-button"><i class="fa fa-facebook"></i> Facebook</a>
+                    <a href="https://twitter.com/john_delpilar" target="_blank" class="w3-bar-item w3-button"><i class="fa fa-twitter"></i> Twitter</a>
+                    <a href="https://www.instagram.com/john_delpilar" target="_blank" class="w3-bar-item w3-button"><i class="fa fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button w3-padding-16">
+                    App <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a href="../gwa-calc/" class="w3-bar-item w3-button"><i class="fa fa-calculator"></i> GWA Calculator</a>
+                    <a href="../snake/" class="w3-bar-item w3-button"><i class="fa fa-gamepad"></i> Snake</a>
+                    <a href="../exercises/" class="w3-bar-item w3-button"><i class="fa fa-keyboard-o"></i> Exercises</a>
+                </div>
+            </div>
+        </div>
+
+        <header class="w3-container w3-theme w3-padding" id="myHeader">
+            <div class="w3-center">
+                <h5>JOHN DEL PILAR</h5>
+                <h1 class="w3-xxxlarge w3-animate-bottom"><i class="fa fa-calculator"></i> GWA CALCULATOR</h1>
+            </div>
+        </header>
+
+        <div id="form-main-block" style="width: 90%; margin: 0 auto; max-width: 700px;">
+            <form>
+                <div align="center">
+                    <table id="form-grade-input-table" align="center" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Unit</th>
+                                <th>Grade</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="form-grade-input-body">
+                            <tr class='field'>
+                                <td><input class='form-control' type='text' id='code[]' name='code[]' pattern='.{1,20}'></td>
+                                <td><input class='form-control' type='number' id='unit[]' name='unit[]' required value='3' min='1' max='99'></td>
+                                <td align='center' style='min-width: 92px;'>
+                                    <select class='form-control' id='grade[]' name='grade[]' required>
+                                        <option>1.00</option>
+                                        <option>1.25</option>
+                                        <option>1.50</option>
+                                        <option>1.75</option>
+                                        <option>2.00</option>
+                                        <option>2.25</option>
+                                        <option>2.50</option>
+                                        <option>2.75</option>
+                                        <option>3.00</option>
+                                        <option>5.00</option>
+                                    </select>
+                                </td>
+                                <td><i class='fa fa-trash-o' style='font-size: xx-large;' onclick='$(this).closest(\"tr\").remove();'></i></td>
+                            </tr>
+                            <tr class='field'>
+                                <td><input class='form-control' type='text' id='code[]' name='code[]' pattern='.{1,20}'></td>
+                                <td><input class='form-control' type='number' id='unit[]' name='unit[]' required value='3' min='1' max='99'></td>
+                                <td align='center' style='min-width: 92px;'>
+                                    <select class='form-control' id='grade[]' name='grade[]' required>
+                                        <option>1.00</option>
+                                        <option>1.25</option>
+                                        <option>1.50</option>
+                                        <option>1.75</option>
+                                        <option>2.00</option>
+                                        <option>2.25</option>
+                                        <option>2.50</option>
+                                        <option>2.75</option>
+                                        <option>3.00</option>
+                                        <option>5.00</option>
+                                    </select>
+                                </td>
+                                <td><i class='fa fa-trash-o' style='font-size: xx-large;' onclick='$(this).closest(\"tr\").remove();'></i></td>
+                            </tr>
+                            <tr class='field'>
+                                <td><input class='form-control' type='text' id='code[]' name='code[]' pattern='.{1,20}'></td>
+                                <td><input class='form-control' type='number' id='unit[]' name='unit[]' required value='3' min='1' max='99'></td>
+                                <td align='center' style='min-width: 92px;'>
+                                    <select class='form-control' id='grade[]' name='grade[]' required>
+                                        <option>1.00</option>
+                                        <option>1.25</option>
+                                        <option>1.50</option>
+                                        <option>1.75</option>
+                                        <option>2.00</option>
+                                        <option>2.25</option>
+                                        <option>2.50</option>
+                                        <option>2.75</option>
+                                        <option>3.00</option>
+                                        <option>5.00</option>
+                                    </select>
+                                </td>
+                                <td><i class='fa fa-trash-o' style='font-size: xx-large;' onclick='$(this).closest(\"tr\").remove();'></i></td>
+                            </tr>
+                            <tr class='field'>
+                                <td><input class='form-control' type='text' id='code[]' name='code[]' pattern='.{1,20}'></td>
+                                <td><input class='form-control' type='number' id='unit[]' name='unit[]' required value='3' min='1' max='99'></td>
+                                <td align='center' style='min-width: 92px;'>
+                                    <select class='form-control' id='grade[]' name='grade[]' required>
+                                        <option>1.00</option>
+                                        <option>1.25</option>
+                                        <option>1.50</option>
+                                        <option>1.75</option>
+                                        <option>2.00</option>
+                                        <option>2.25</option>
+                                        <option>2.50</option>
+                                        <option>2.75</option>
+                                        <option>3.00</option>
+                                        <option>5.00</option>
+                                    </select>
+                                </td>
+                                <td><i class='fa fa-trash-o' style='font-size: xx-large;' onclick='$(this).closest(\"tr\").remove();'></i></td>
+                            </tr>	
+                        </tbody>    
+                    </table>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+                        <input class="btn btn-danger btn-block" type="reset">
+                    </div>
+                    <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2">
+                        <input id="add-row" class="btn btn-info btn-block" type="button" value="Add Row">
+                    </div>
+                    <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3">
+                        <input class="btn btn-primary btn-block" type="button" onclick="calculate()" value="Calculate">
+                    </div>
+                    <div class="col-xs-5 col-sm-2 col-md-2 col-lg-2">
+                        <input class="form-control" type="text" value="" id="unitValue" disabled>
+                        <label>Total Units</label>
+                    </div>
+                    <div class="col-xs-7 col-sm-3 col-md-3 col-lg-3">
+                        <input class="form-control" type="text" value="" id="gwaValue" disabled>
+                        <label>Weighted Average</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <input class="btn btn-basic btn-block" type="button" value="Load 3Y2T Courses (temporary feature and will be hidden upon staging)" onclick="load3ITH()">
+                    </div>   
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <input class="btn btn-basic btn-block" type="button" value="Load ALL Courses *may take a while* (temporary feature and will be hidden upon staging)" onclick="loadAll()">
+                    </div>                    
+                </div>
+            </form>
+        </div>    
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#add-row').click(function() {
+                    $('<tr></tr>').load('form-table-body.html', function() {
+                        $('#form-grade-input-body').append($(this));
+                    });
+                });
+            });
+
+            function round(value, decimals) {
+                return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+            }
+
+            function calculate() {
+                var units, grades, totalUnits, gwa, i;
+
+                units = document.getElementsByName('unit[]');
+                grades = document.getElementsByName('grade[]');
+
+                totalUnits = 0;
+                gwa = 0.0;
+
+                for (i = 0; i < grades.length; i++) {
+                    totalUnits += Number(units[i].value);
+                    gwa += Number(units[i].value) * Number(grades[i].value);
+                }
+
+                gwa /= totalUnits;
+                gwa = round(gwa, 8);
+
+                document.getElementById('unitValue').value = totalUnits;
+                document.getElementById('gwaValue').value = gwa;
+
+            }
+
+            function load3ITH() {
+                //if (confirm("Load 3ITH courses?")) {
+                $('tr').remove('.field');
+                $('<tbody></tbody>').load('form-table-body-3ith.html', function() {
+                    $('#form-grade-input-table').append($(this));
+                });
+                //}
+            }
+
+            function loadAll() {
+                //if (confirm("Load ALL courses?")) {
+                $('tr').remove('.field');
+                $('<tbody></tbody>').load('form-table-body-all.html', function() {
+                    $('#form-grade-input-table').append($(this));
+                });
+                //}
+            }
+        </script>
+
+        <script src="../../js/script.js"></script>
+        <script src="../../js/jquery-latest.min.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "johnprotect"
+AuthUserFile "/home/ustjpcso/.htpasswds/public_html/johndelpilar/app/exercises/passwd"
+require valid-user

@@ -1,0 +1,92 @@
+&lt;?php session_start() ?&gt;
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot; type=&quot;text/css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/font-awesome.css&quot; type=&quot;text/css&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=Cp1252&quot;&gt;
+&lt;title&gt;GWA Calculator&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+	body {
+		color: whitesmoke;
+		background-color: #202020;
+		font-family: &quot;Segoe UI&quot;;
+		width: 90%;
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	hr {
+		border-width: 2px;
+		border-style: solid;
+		border-color: lightgray;
+	}
+	p {
+		font-size: x-small;
+	}
+	th, td {
+		padding: 5px 15px;
+	}
+&lt;/style&gt;
+&lt;/head&gt;
+    &lt;body&gt;
+    &lt;h2&gt;&lt;i class=&quot;fa fa-calculator&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; GWA Calculator&lt;/h2&gt;
+    &lt;hr&gt;
+    &lt;div id=&quot;form-main-block&quot;&gt;
+	    &lt;form action=&quot;calculate.php&quot;&gt;
+	    	&lt;div align=&quot;center&quot;&gt;
+	    		&lt;table align=&quot;center&quot; class=&quot;table table-hover&quot;&gt;
+					&lt;thead&gt;
+						&lt;tr&gt;
+							&lt;th&gt;Code&lt;/th&gt;
+							&lt;th&gt;Unit&lt;/th&gt;
+							&lt;th&gt;Grade&lt;/th&gt;
+						&lt;/tr&gt;
+					&lt;/thead&gt;
+					&lt;tbody&gt;
+						&lt;?php 
+							for ($i = 0; $i &lt; (int) $_GET[&apos;courseCount&apos;]; $i++) {
+								echo &quot;&lt;tr&gt;&quot;;
+								echo &quot;&lt;td&gt;&lt;input class=&apos;form-control&apos; type=&apos;text&apos; name=&apos;code[]&apos; required pattern=&apos;.{1,10}&apos;&gt;&lt;/td&gt;&quot;;
+								echo &quot;&lt;td&gt;&lt;input class=&apos;form-control&apos; type=&apos;number&apos; name=&apos;unit[]&apos; required min=&apos;1&apos; max=&apos;5&apos;&gt;&lt;/td&gt;&quot;;
+								echo &quot;&lt;td align=&apos;center&apos;&gt;&quot;; 
+								echo &quot;&lt;select class=&apos;form-control&apos; name=&apos;grade[]&apos; required&gt;&quot;;
+								echo &quot;&lt;option&gt;1.00&lt;/option&gt;&quot;;
+								echo &quot;&lt;option&gt;1.25&lt;/option&gt;&quot;;
+								echo &quot;&lt;option&gt;1.50&lt;/option&gt;&quot;;
+								echo &quot;&lt;option&gt;1.75&lt;/option&gt;&quot;;
+								echo &quot;&lt;option&gt;2.00&lt;/option&gt;&quot;;
+								echo &quot;&lt;option&gt;2.25&lt;/option&gt;&quot;;
+								echo &quot;&lt;option&gt;2.50&lt;/option&gt;&quot;;
+								echo &quot;&lt;option&gt;2.75&lt;/option&gt;&quot;;
+								echo &quot;&lt;option&gt;3.00&lt;/option&gt;&quot;;
+								echo &quot;&lt;option&gt;5.00&lt;/option&gt;&quot;;
+								echo &quot;&lt;/select&gt;&quot;;
+								echo &quot;&lt;/td&gt;&quot;;
+								echo &quot;&lt;/tr&gt;&quot;;	
+							}
+						?&gt;
+					&lt;/tbody&gt;
+				&lt;/table&gt;
+	    	&lt;/div&gt;
+	    	&lt;br&gt;
+	    	&lt;div class=&quot;row&quot;&gt;
+	    		&lt;div class=&quot;col-xs-12 col-sm-12 col-md-4 col-lg-4&quot;&gt;
+	    			&lt;a href=&quot;index.php&quot;&gt;&lt;input class=&quot;btn btn-warning btn-block&quot; type=&quot;button&quot; value=&quot;Back&quot;&gt;&lt;/a&gt;
+	    		&lt;/div&gt;
+	    		&lt;div class=&quot;col-xs-12 col-sm-12 col-md-4 col-lg-4&quot;&gt;
+	    			&lt;input class=&quot;btn btn-danger btn-block&quot; type=&quot;reset&quot;&gt;
+	    		&lt;/div&gt;
+	    		&lt;div class=&quot;col-xs-12 col-sm-12 col-md-4 col-lg-4&quot;&gt;
+	    			&lt;input class=&quot;btn btn-primary btn-block&quot; type=&quot;submit&quot; value=&quot;Calculate&quot;&gt;
+	    		&lt;/div&gt;
+	    	&lt;/div&gt;
+	    &lt;/form&gt;
+    &lt;/div&gt;
+ 
+    &lt;hr&gt;
+    &lt;p&gt;&lt;i&gt;DEL PILAR, John Anthony P.&lt;/i&gt;
+    &lt;br&gt;&lt;i&gt;johnanthony.delpilar@gmail.com&lt;/i&gt;
+    &lt;br&gt;&lt;i&gt;2014069455@ust-ics.mygbiz.com&lt;/i&gt;
+    &lt;br&gt;&lt;i&gt;+63 917 670 1024&lt;/i&gt;&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>John Del Pilar</title>
+        <link rel="icon" href="http://ustjpcs.org/johndelpilar/icon.png">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../../css/w3.css">
+        <link rel="stylesheet" href="../../css/w3-theme-black.css">
+        <link rel="stylesheet" href="../../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../css/bootstrap.min.css">
+        <script src="../../js/script.js"></script>
+        <script src="../../js/jquery-latest.min.js"></script>
+    </head>
+    <body>
+        <div class="w3-bar w3-theme">
+            <a href="../../index.php" class="w3-bar-item w3-button w3-padding-16">Home</a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button w3-padding-16">
+                    Social <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a href="https://www.facebook.com/johnanthony.delpilar" target="_blank" class="w3-bar-item w3-button"><i class="fa fa-facebook"></i> Facebook</a>
+                    <a href="https://twitter.com/john_delpilar" target="_blank" class="w3-bar-item w3-button"><i class="fa fa-twitter"></i> Twitter</a>
+                    <a href="https://www.instagram.com/john_delpilar" target="_blank" class="w3-bar-item w3-button"><i class="fa fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button w3-padding-16">
+                    App <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                    <a href="../gwa-calc/" class="w3-bar-item w3-button"><i class="fa fa-calculator"></i> GWA Calculator</a>
+                    <a href="../snake/" class="w3-bar-item w3-button"><i class="fa fa-gamepad"></i> Snake</a>
+                    <a href="../exercises/" class="w3-bar-item w3-button"><i class="fa fa-keyboard-o"></i> Exercises</a>
+                </div>
+            </div>
+        </div>
+
+        <header class="w3-container w3-theme w3-padding" id="myHeader">
+            <div class="w3-center">
+                <h5>JOHN DEL PILAR</h5>
+                <h1 class="w3-xxxlarge w3-animate-bottom"><i class="fa fa-gamepad"></i> SNAKE</h1>
+            </div>
+        </header>
+        
+        <br>
+        
+        <div align="center">
+            <canvas id="gc" width="400" height="400">
+                This can only be played on desktop with JavaScript enabled. It requires the arrow keys.
+            </canvas>
+        </div>
+        
+        <script>
+            window.onload=function() {
+                canv=document.getElementById("gc");
+                ctx=canv.getContext("2d");
+                document.addEventListener("keydown",keyPush);
+                setInterval(game,1000/15);
+            }
+            px=py=10;
+            gs=tc=20;
+            ax=ay=15;
+            xv=yv=0;
+            trail=[];
+            tail = 5;
+            function game() {
+                px+=xv;
+                py+=yv;
+                if(px<0) {
+                    px= tc-1;
+                }
+                if(px>tc-1) {
+                    px= 0;
+                }
+                if(py<0) {
+                    py= tc-1;
+                }
+                if(py>tc-1) {
+                    py= 0;
+                }
+                ctx.fillStyle="black";
+                ctx.fillRect(0,0,canv.width,canv.height);
+
+                ctx.fillStyle="aqua";
+                for(var i=0;i<trail.length;i++) {
+                    ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
+                    if(trail[i].x==px && trail[i].y==py) {
+                        tail = 5;
+                    }
+                }
+                trail.push({x:px,y:py});
+                while(trail.length>tail) {
+                    trail.shift();
+                }
+
+                if(ax==px && ay==py) {
+                    tail++;
+                    ax=Math.floor(Math.random()*tc);
+                    ay=Math.floor(Math.random()*tc);
+                }
+                ctx.fillStyle="red";
+                ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
+            }
+            function keyPush(evt) {
+                switch(evt.keyCode) {
+                    case 37:
+                        xv=-1;yv=0;
+                        break;
+                    case 38:
+                        xv=0;yv=-1;
+                        break;
+                    case 39:
+                        xv=1;yv=0;
+                        break;
+                    case 40:
+                        xv=0;yv=1;
+                        break;
+                }
+            }
+        </script>
+
+        <script src="../../js/script.js"></script>
+        <script src="../../js/jquery-latest.min.js"></script>
+
+    </body>
+</html>

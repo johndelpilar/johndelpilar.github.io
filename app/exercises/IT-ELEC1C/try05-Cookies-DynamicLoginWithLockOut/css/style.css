@@ -1,0 +1,34 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	color: whitesmoke;
+	background-color: #202020;
+	font-family: "Segoe UI";
+	width: 90%;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+label {
+	align: right;
+}
+
+hr {
+	border-width: 2px;
+	border-style: solid;
+	border-color: lightgray;
+}
+
+p {
+	font-size: x-small;
+}
+
+a#hidden {
+	text-decoration: none;
+	color: whitesmoke;
+	background-color: #202020;
+}
+
+.invalid {
+	color: #ff5050;
+}

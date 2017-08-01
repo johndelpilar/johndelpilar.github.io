@@ -1,0 +1,7 @@
+[01-Jun-2017 07:14:03 UTC] PHP Notice:  Undefined index: name in /home/ustjpcso/public_html/johndelpilar/app/exercises/john01-Everything/storeLoginInfo.php on line 71
+[01-Jun-2017 07:14:03 UTC] PHP Notice:  Undefined index: cardNum in /home/ustjpcso/public_html/johndelpilar/app/exercises/john01-Everything/storeLoginInfo.php on line 72
+[01-Jun-2017 07:14:03 UTC] PHP Notice:  Undefined index: isWithdrawing in /home/ustjpcso/public_html/johndelpilar/app/exercises/john01-Everything/storeLoginInfo.php on line 73
+[01-Jun-2017 07:14:37 UTC] PHP Notice:  Undefined index: pinNum in /home/ustjpcso/public_html/johndelpilar/app/exercises/john01-Everything/validatePin.php on line 74
+[01-Jun-2017 07:15:38 UTC] PHP Notice:  Undefined index: name in /home/ustjpcso/public_html/johndelpilar/app/exercises/john01-Everything/storeLoginInfo.php on line 71
+[01-Jun-2017 07:15:38 UTC] PHP Notice:  Undefined index: cardNum in /home/ustjpcso/public_html/johndelpilar/app/exercises/john01-Everything/storeLoginInfo.php on line 72
+[01-Jun-2017 07:15:38 UTC] PHP Notice:  Undefined index: isWithdrawing in /home/ustjpcso/public_html/johndelpilar/app/exercises/john01-Everything/storeLoginInfo.php on line 73
