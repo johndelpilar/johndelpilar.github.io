@@ -2,13 +2,23 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="1; url=/">
-        <script type="text/javascript">
-            window.location.href = "/"
-        </script>
         <title>Page Redirection</title>
     </head>
     <body>
-        If you are not redirected automatically, follow this <a href='/'>link to example</a>.
+        <center>
+	    <h1><strong>!! ACCESS REQUIRED !!!</strong></h1>
+	</center>
     </body>
+    <script type="text/javascript">
+	var pw = prompt("Enter password", "");
+	if (!pw) {
+	    window.location.href = "/";
+	}
+	if (pw == window.location.hostname.substring(0, 12)) {	
+	    window.location.href = "nexus.html";
+	} else {
+	    alert("Incorrect! Redirecting...");
+	    window.location.href = "/";
+	}
+    </script>
 </html>

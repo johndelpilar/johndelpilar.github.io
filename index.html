@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/script.js"></script>
+	<script src="js/jquery-latest.min.js"></script>
     </head>
     <body>
         <div class="w3-bar w3-theme">
@@ -60,16 +61,18 @@
                 <div class="w3-card-4 w3-container" style="min-height:400px">
                     <h3>Compulsive</h3><br>
                     <i class="fa fa-exclamation-circle w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-                    <p>
-                        <i>
-                            Technology is a compulsive and addictive way to live.
-                        </i>
-                    </p>
-                    <p>
-                        <b>
-                            Rick Pitino
-                        </b>
-                    </p>
+                    <div onclick="explodeText(this)">
+                    	<p>
+                            <i>
+                            	Technology is a compulsive and addictive way to live.
+                            </i>
+                    	</p>
+                    	<p>
+                            <b>
+                            	Rick Pitino
+                            </b>
+                    	</p>
+		    </div>
                 </div>
             </div>
 
@@ -77,16 +80,18 @@
                 <div class="w3-card-4 w3-container" style="min-height:400px">
                     <h3>Obsessive</h3><br>
                     <i class="fa fa-cubes w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-                    <p>
-                        <i>
-                            I'm obsessive. I want to know the answer to how good I am. Most people aren't.
-                        </i>
-                    </p>
-                    <p>
-                        <b>
-                            Daley Thompson
-                        </b>
-                    </p>
+                    <div onclick="explodeText(this)">
+                    	<p>
+                            <i>
+                            	I'm obsessive. I want to know the answer to how good I am. Most people aren't.
+                            </i>
+                    	</p>
+                    	<p>
+                            <b>
+                            	Daley Thompson
+                            </b>
+                    	</p>
+		    </div>
                 </div>
             </div>
 
@@ -94,16 +99,18 @@
                 <div class="w3-card-4 w3-container" style="min-height:400px">
                     <h3>Resolute</h3><br>
                     <i class="fa fa-hand-rock-o w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-                    <p>
-                        <i>
-                            The truest wisdom is a resolute determination.
-                        </i>
-                    </p>
-                    <p>
-                        <b>
-                            Napoleon Bonaparte
-                        </b>
-                    </p>
+                    <div onclick="explodeText(this)">
+		    	<p>
+                            <i>
+                            	The truest wisdom is a resolute determination.
+                            </i>
+                    	</p>
+                    	<p>
+                            <b>
+                            	Napoleon Bonaparte
+                            </b>
+                    	</p>
+		    </div>
                 </div>
             </div>
 
@@ -111,16 +118,18 @@
                 <div class="w3-card-4 w3-container" style="min-height:400px">
                     <h3>Equivocal</h3><br>
                     <i class="fa fa-cloud w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-                    <p>
-                        <i>
-                            Anime is intended to have ambiguous features. That's part of the art form.
-                        </i>
-                    </p>
-                    <p>
-                        <b>
-                            M. Night Shyamalan
-                        </b>
-                    </p>
+                    <div onclick="explodeText(this)">
+                    	<p>
+                            <i>
+                            	Anime is intended to have ambiguous features. That's part of the art form.
+                            </i>
+                    	</p>
+                    	<p>
+                            <b>
+                            	M. Night Shyamalan
+                            </b>
+                    	</p>
+		    </div>
                 </div>
             </div>
         </div>
@@ -179,7 +188,8 @@
                 </div>
             </div>
         </form>
-
+	
+	<script src="js/jquery-latest.min.js"></script>
         <script src="js/script.js"></script>
         <script>
             function submitMailContact() {
@@ -188,5 +198,40 @@
                 return false;
             }
         </script>
+	<script>
+	    $(document).ready(function() {
+		$(".fa").click(function() {
+		    $(this).toggleClass('fa-spin');
+	        });
+            });
+	</script>
+	<script>
+	    function explodeText(o) {
+              var $o = $(o);
+	      //var text = $(o);
+
+              $o.html($o.text().replace(/([\S])/g, "<span>$1</span>"));
+              $o.css("position", "relative");
+              $("span", $o).each(function(i) {
+                var newTop = Math.floor(Math.random()*500)*((i%2)?1:-1);
+                var newLeft = Math.floor(Math.random()*500)*((i%2)?1:-1);
+
+                $(this).css({position: "relative",
+                  opacity: 1,
+                  fontSize: 12,
+                  top: 0,
+                  left: 0
+                }).animate({
+                  opacity: 0,
+                  fontSize: 84,
+                  top: newTop,
+                  left:newLeft
+                },1000);
+		
+	      setTimeout(function() { $o.html($o.text().replace(/([\S])/g, "")); }, 300);
+              
+              });
+            }
+	</script>
     </body>
 </html>
