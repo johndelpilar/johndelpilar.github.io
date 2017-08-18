@@ -29,17 +29,27 @@
 	    }
 
 		class RaffleStats {
-			private static $prize = array();
+			private static $prizes = array();
 
 			function __construct() {
-				self::$prize['prize-1'] = 0.4;
-				self::$prize['prize-2'] = 0.3;
-				self::$prize['prize-3'] = 0.2;
-				self::$prize['prize-4'] = 0.1;
+				self::$prizes['prize-1'] = 0.4;
+				self::$prizes['prize-2'] = 0.3;
+				self::$prizes['prize-3'] = 0.2;
+				self::$prizes['prize-4'] = 0.1;
+
+				self::setPrizesWithCumulativeProbabilities();
 			}
 
 			public static function getPrizes() {
 				return self::$prize;
+			}
+
+			private static function setPrizesWithCumulativeProbabilities() {
+				$accumulator = 0.0;
+				foreach (self::$prizes as $prize => $chance) {
+					$accumulator += $chance;
+					self::$prizes[$prize] = $accumulator;
+				}
 			}
 			
 		}
@@ -127,6 +137,8 @@
 			foreach (RaffleStats::getPrizes() as $prize => $chance) {
 				
 			}
+
+
 
 			# # # # # # # # # # # # # #
 
