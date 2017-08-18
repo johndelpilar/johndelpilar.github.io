@@ -130,6 +130,7 @@
 					# die(print_r($x));
 					echo $x->getMessage();
 				}
+				$conn_srv = null;
 			}//*/
 
 			# code executed below is done after the record is inserted #
