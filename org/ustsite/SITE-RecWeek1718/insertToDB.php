@@ -27,6 +27,22 @@
 	    	}
 	    	return $is_conn;
 	    }
+
+		class RaffleStats {
+			private static $prize = array();
+
+			function __construct() {
+				self::$prize['prize-1'] = 0.4;
+				self::$prize['prize-2'] = 0.3;
+				self::$prize['prize-3'] = 0.2;
+				self::$prize['prize-4'] = 0.1;
+			}
+
+			public static function getPrizes() {
+				return self::$prize;
+			}
+			
+		}
 	    
 		$servername = "localhost";
 		$username = "root";
@@ -101,10 +117,19 @@
 				}
 				catch (PDOException $x) {
 					print("<br><br><br>Error connecting to SQL Server.");
-					die(print_r($x));
+					# die(print_r($x));
+					echo $x->getMessage();
 				}
 			}//*/
+
+			# code executed below is done after the record is inserted #
 			
+			foreach (RaffleStats::getPrizes() as $prize => $chance) {
+				
+			}
+
+			# # # # # # # # # # # # # #
+
 			header("location: register.php");
 			
 		} catch (PDOException $e) {
