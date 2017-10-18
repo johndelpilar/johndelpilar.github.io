@@ -149,29 +149,25 @@
             </div>
         </footer>
 
-        <form action="" method="post" onsubmit="return submitMailContact()">
+        <form action="#" method="post" onsubmit="">
             <div id="id01" class="w3-modal">
                 <div class="w3-modal-content w3-card-4 w3-animate-top">
                     <header class="w3-container w3-theme-l1"> 
                         <span onclick="document.getElementById('id01').style.display='none'"
                               class="w3-button w3-display-topright">&times;</span>
-                        <h4>Contact</h4>
+                        <h4>What do you need, Bimb? :)</h4>
                     </header>
                     <div class="w3-padding">
                         <div class="w3-section">      
-                            <input class="w3-input" name="name" type="text" required>
+                            <input class="w3-input" id="name" name="name" type="text" required>
                             <label>Name</label>
                         </div>
                         <div class="w3-section">      
-                            <input class="w3-input" name="email" type="email" required>
-                            <label>Email</label>
-                        </div>
-                        <div class="w3-section">      
-                            <input class="w3-input" name="subject" type="text" required>
+                            <input class="w3-input" id="subject" name="subject" type="text" required>
                             <label>Subject</label>
                         </div>
                         <div class="w3-section">
-                            <textarea class="w3-input" name="message" rows="5"></textarea>
+                            <textarea class="w3-input" id="message" name="message" rows="5"></textarea>
                             <label>Message</label>
                         </div>
                         <div class="w3-section">
@@ -181,8 +177,8 @@
                     </div>
                     <footer class="w3-container w3-theme-l1">
                         <div style="padding: 8px 0px;">
-                            <input type="submit" class="w3-btn w3-hover-dark-grey w3-white">
-                            <div id="myBar" class="w3-center w3-padding w3-theme" style="width:0%">0%</div>
+                            <input type="button" onclick="submitMailContact()" class="w3-btn w3-hover-dark-grey w3-white" value="SUBMIT">
+                            <!--	<div id="myBar" class="w3-center w3-padding w3-theme" style="width:0%">0%</div>	-->
                         </div>
                     </footer>
                 </div>
@@ -193,9 +189,44 @@
         <script src="js/script.js"></script>
         <script>
             function submitMailContact() {
-                move();
-                alert("Not yet implemented");
-                return false;
+                //move();
+				
+				var subject = document.getElementById('subject').value;
+				var body = "";
+				
+				var name = document.getElementById('name').value;
+				var message = document.getElementById('message').value;
+				var isUrgent = document.getElementById('requiresImmediateAttention').checked;
+				
+				body += message;
+				body += "\r\n";
+				body += "\r\n";
+				body += "\r\n";
+				body += "Regards, ";
+				body += "\r\n";
+				body += name;
+				
+				body = encodeURIComponent(body);
+				
+				if (isUrgent) {
+					subject = "[URGENT] " + subject;
+				}
+				
+				var emailWindow = window.open("mailto:johnanthony.delpilar@gmail.com?" +
+					"subject=" + subject + "&" +
+					"body=" + body
+				);
+				
+				emailWindow.blur();
+				
+				document.getElementById('name').value = "";
+				document.getElementById('subject').value = "";
+				document.getElementById('message').value = "";
+				document.getElementById('requiresImmediateAttention').checked = false;
+				
+				//resetMoveBar();
+				
+				return true;
             }
         </script>
 	<script>

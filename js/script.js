@@ -74,6 +74,12 @@ function move() {
   }
 }
 
+function resetMoveBar() {
+  var elem = document.getElementById("myBar");  
+  elem.style.width = "0%";
+  elem.innerHTML = "0%";
+}
+
 //back to top
 $('#go-to-top').each(function(){
     $(this).click(function(){ 
