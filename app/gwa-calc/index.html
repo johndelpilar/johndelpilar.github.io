@@ -244,7 +244,7 @@
                 //if (confirm("Load 4IT 1T courses?")) {
                 $('tr').remove('.field');
                 $('<tbody></tbody>').load('form-table-body-4ith-1st-term.html', function() {
-                    $('#form-grade-input-table').append($(this));
+                    $('#form-grade-input-table').replaceAll($(this));
                 });
                 //}
             }
@@ -253,7 +253,7 @@
                 //if (confirm("Load ALL courses?")) {
                 $('tr').remove('.field');
                 $('<tbody></tbody>').load('form-table-body-all.html', function() {
-                    $('#form-grade-input-table').append($(this));
+                    $('#form-grade-input-table').replaceAll($(this));
                 });
                 //}
             }
