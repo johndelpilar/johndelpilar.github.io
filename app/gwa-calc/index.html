@@ -189,11 +189,11 @@
                         <input class="form-control" type="text" value="" id="gwaValue" disabled>
                         <label>Weighted Average</label>
                     </div>
-                    <!--
+                    
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <input class="btn btn-basic btn-block" type="button" value="Load 3Y2T Courses (temporary feature and will be hidden upon staging)" onclick="load3ITH()">
+                        <input class="btn btn-basic btn-block" type="button" value="Load IT 4Y1T Courses (temp)" onclick="loadSpecific()">
                     </div>   
-                    -->
+                    
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <input class="btn btn-basic btn-block" type="button" value="Load ALL UST-IT Courses (may take a while)" onclick="loadAll()">
                     </div>                    
@@ -240,7 +240,7 @@
 
             }
 
-            function load3ITH() {
+            function loadSpecific() {
                 //if (confirm("Load 4IT 1T courses?")) {
                 $('tr').remove('.field');
                 $('<tbody></tbody>').load('form-table-body-4ith-1st-term.html', function() {
