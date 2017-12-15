@@ -242,7 +242,7 @@
 
             function loadSpecific() {
                 //if (confirm("Load 4IT 1T courses?")) {
-                $('tr').remove('.field');
+                $('.field').remove();
                 $('<tbody></tbody>').load('form-table-body-4ith-1st-term.html', function() {
                     $('#form-grade-input-table').append($(this));
                 });
@@ -251,7 +251,7 @@
 
             function loadAll() {
                 //if (confirm("Load ALL courses?")) {
-                $('tr').remove('.field');
+                $('.field').remove();
                 $('<tbody></tbody>').load('form-table-body-all.html', function() {
                     $('#form-grade-input-table').append($(this));
                 });
