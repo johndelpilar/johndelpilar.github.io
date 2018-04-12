@@ -26,8 +26,9 @@
     </head>
     <body>
         <div class="w3-bar w3-theme">
-            <a href="/" class="w3-bar-item w3-button w3-padding-16">Home</a>
-            <div class="w3-dropdown-hover">
+          <a href="/" class="w3-bar-item w3-button w3-padding-16">Home</a>
+          <a href="cv" class="w3-bar-item w3-button w3-padding-16">CV</a>
+          <div class="w3-dropdown-hover">
                 <button class="w3-button w3-padding-16">
                     Social <i class="fa fa-caret-down"></i>
                 </button>
@@ -160,7 +161,7 @@
             <h3 style="padding-left: 16px;">John Del Pilar</h3>
             <p></p>
             <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
-                <span class="w3-text w3-theme-light w3-padding">Go To Top</span>&nbsp;   
+                <span class="w3-text w3-theme-light w3-padding">Go To Top</span>&nbsp;
                 <a class="w3-text-white" href="#"><span class="w3-xlarge">
                     <i class="fa fa-chevron-circle-up"></i></span></a>
             </div>
@@ -172,17 +173,17 @@
         <form action="#" method="post" onsubmit="">
             <div id="id01" class="w3-modal">
                 <div class="w3-modal-content w3-card-4 w3-animate-top">
-                    <header class="w3-container w3-theme-l1"> 
+                    <header class="w3-container w3-theme-l1">
                         <span onclick="document.getElementById('id01').style.display='none'"
                               class="w3-button w3-display-topright">&times;</span>
-                        <h4>What do you need, Bimb? :)</h4>
+                        <h4>What do you need? :)</h4>
                     </header>
                     <div class="w3-padding">
-                        <div class="w3-section">      
+                        <div class="w3-section">
                             <input class="w3-input" id="name" name="name" type="text" required>
                             <label>Name</label>
                         </div>
-                        <div class="w3-section">      
+                        <div class="w3-section">
                             <input class="w3-input" id="subject" name="subject" type="text" required>
                             <label>Subject</label>
                         </div>
@@ -204,20 +205,20 @@
                 </div>
             </div>
         </form>
-	
+
 	<script src="js/jquery-latest.min.js"></script>
         <script src="js/script.js"></script>
         <script>
             function submitMailContact() {
                 //move();
-				
+
 				var subject = document.getElementById('subject').value;
 				var body = "";
-				
+
 				var name = document.getElementById('name').value;
 				var message = document.getElementById('message').value;
 				var isUrgent = document.getElementById('requiresImmediateAttention').checked;
-				
+
 				body += message;
 				body += "\r\n";
 				body += "\r\n";
@@ -225,27 +226,27 @@
 				body += "Regards, ";
 				body += "\r\n";
 				body += name;
-				
+
 				body = encodeURIComponent(body);
-				
+
 				if (isUrgent) {
 					subject = "[URGENT] " + subject;
 				}
-				
+
 				var emailWindow = window.open("mailto:johnanthony.delpilar@gmail.com?" +
 					"subject=" + subject + "&" +
 					"body=" + body
 				);
-				
+
 				emailWindow.blur();
-				
+
 				document.getElementById('name').value = "";
 				document.getElementById('subject').value = "";
 				document.getElementById('message').value = "";
 				document.getElementById('requiresImmediateAttention').checked = false;
-				
+
 				//resetMoveBar();
-				
+
 				return true;
             }
         </script>
@@ -287,9 +288,9 @@
                   top: newTop,
                   left:newLeft
                 },1000);
-		
+
 	      setTimeout(function() { $o.html($o.text().replace(/([\S])/g, "")); }, 300);
-              
+
               });
             }
 	</script>

@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="../../css/bootstrap.min.css">
         <script src="../../js/script.js"></script>
         <script src="../../js/jquery-latest.min.js"></script>
-        
+
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115454176-1"></script>
         <script>
@@ -26,6 +26,7 @@
     <body>
         <div class="w3-bar w3-theme">
             <a href="../../" class="w3-bar-item w3-button w3-padding-16">Home</a>
+            <a href="../../cv" class="w3-bar-item w3-button w3-padding-16">CV</a>
             <div class="w3-dropdown-hover">
                 <button class="w3-button w3-padding-16">
                     Social <i class="fa fa-caret-down"></i>
@@ -65,15 +66,15 @@
                 <h1 class="w3-xxxlarge w3-animate-bottom"><i class="fa fa-gamepad"></i> SNAKE</h1>
             </div>
         </header>
-        
+
         <br>
-        
+
         <div align="center">
             <canvas id="gc" width="400" height="400">
                 This can only be played on desktop with JavaScript enabled. It requires the arrow keys.
             </canvas>
         </div>
-        
+
         <script>
             window.onload=function() {
                 canv=document.getElementById("gc");
